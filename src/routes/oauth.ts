@@ -18,7 +18,7 @@ export default async function oauthRoute(request: Request): Promise<Response> {
   const tokenResponse = await fetch("https://api.notion.com/v1/oauth/token", {
     method: "POST",
     headers: {
-      "Authorization": `Basic ${btoa(`${client_id}:${client_secret}`)}`,
+      "Authorization": "Basic " + btoa(`${client_id}:${client_secret}`),
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
@@ -35,7 +35,7 @@ export default async function oauthRoute(request: Request): Promise<Response> {
   }
 
   return new Response(
-    `Access Token received!\n\nAccess Token: ${tokenData.access_token}\nBot ID: ${tokenData.bot_id}`,
+    `Access Token received!\nAccess Token: ${tokenData.access_token}\nBot ID: ${tokenData.bot_id}`,
     {
       status: 200,
       headers: { "content-type": "text/plain" },
