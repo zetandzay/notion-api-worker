@@ -20,7 +20,11 @@ const corsHeaders = {
 };
 
 const router = new Router<Handler>();
-
+router.get("/", () =>
+  new Response("<h1>🔥 Saint CORE is live! 🔥</h1>", {
+    headers: { "content-type": "text/html" },
+  })
+);
 router.options("*", () => new Response(null, { headers: corsHeaders }));
 router.get("/v1/page/:pageId", pageRoute);
 router.get("/v1/table/:pageId", tableRoute);
