@@ -7,6 +7,7 @@ import { userRoute } from "./routes/user";
 import { searchRoute } from "./routes/search";
 import { createResponse } from "./response";
 import { getCacheKey } from "./get-cache-key";
+import oauthRoute from "./routes/oauth";
 import * as types from "./api/types";
 
 export type Handler = (
@@ -30,6 +31,7 @@ router.get("/v1/page/:pageId", pageRoute);
 router.get("/v1/table/:pageId", tableRoute);
 router.get("/v1/user/:userId", userRoute);
 router.get("/v1/search", searchRoute);
+router.get("/oauth/callback", oauthRoute);
 
 router.get("*", async () =>
   createResponse(
