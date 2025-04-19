@@ -41,3 +41,4 @@ export default async function oauthRoute(request: Request): Promise<Response> {
     headers: { "content-type": "text/plain" },
   }
 );
+}
