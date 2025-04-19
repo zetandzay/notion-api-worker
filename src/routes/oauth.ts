@@ -40,5 +40,5 @@ export default async function oauthRoute(request: Request): Promise<Response> {
     status: 200,
     headers: { "content-type": "text/plain" },
   }
-);
+});
 }
