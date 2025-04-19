@@ -1,0 +1,5 @@
+name = "saintcore-api"
+type = "javascript"
+account_id = "zay73027834@gmail.com"
+workers_dev = true
+compatibility_date = "2024-01-01"
