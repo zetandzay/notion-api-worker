@@ -33,12 +33,11 @@ export default async function oauthRoute(request: Request): Promise<Response> {
   if (!tokenResponse.ok) {
     return new Response("Token exchange failed: " + JSON.stringify(tokenData), { status: 500 });
   }
-
   return new Response(
-  `Access Token received!\nAccess Token: ${tokenData.access_token}\nBot ID: ${tokenData.bot_id}`,
-  {
-    status: 200,
-    headers: { "content-type": "text/plain" },
-  }
-});
+    `Access Token received!\nAccess Token: ${tokenData.access_token}\nBot ID: ${tokenData.bot_id}`,
+    {
+      status: 200,
+      headers: { "content-type": "text/plain" },
+    }
+  );
 }
